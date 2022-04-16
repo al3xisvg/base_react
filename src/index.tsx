@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { Provider } from 'react-redux'
 
@@ -10,12 +10,15 @@ import GlobalStyle from './styles/globals'
 
 const client = new QueryClient()
 
-ReactDOM.render(
+const element = document.getElementById('root')
+
+const root = createRoot(element!)
+
+root.render(
   <QueryClientProvider client={client}>
     <GlobalStyle />
     <Provider store={store}>
       <App />
     </Provider>
-  </QueryClientProvider>,
-  document.getElementById('root')
+  </QueryClientProvider>
 )
