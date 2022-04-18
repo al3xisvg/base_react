@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-import { sizes } from 'src/values/dimens'
-
 export const AppStyle = styled.div`
   display: flex;
   flex-direction: column;
@@ -11,8 +9,5 @@ export const AppStyle = styled.div`
   left: 0;
   right: 0;
   margin: auto;
-
-  @media screen and (min-width: ${sizes.md}) {
-    max-width: 800px;
-  }
+  max-width: 800px;
 `
